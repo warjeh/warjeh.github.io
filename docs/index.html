@@ -1,16 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+  <base href="/">
+
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Warjeh</title>
+
+  <meta name="description" content="My personal website.">
+  <meta name="keywords" content="وارژه, blog">
+  <meta name="author" content="Parham Eb">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Browser meta tags & icons -->
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Warjeh">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <meta property="og:title" content="Warjeh">
+  <meta property="og:image" content="icons/Icon-192.png">
+  <meta property="og:description" content="Personal website.">
+  <meta property="og:url" content="https://warjeh.com">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    const serviceWorkerVersion = "388221075";
+  </script>
+  <script src="flutter.js" defer></script>
 </head>
 
 <body>
-  <h1>Warjeh</h1>
+  <div id="loading" class="center">
+    <div id="square-md" class="center-hr spinner"></div>
+    <div id="square-lg" class="center-hr"></div>
+    <div id="circle" class="center-hr"></div>
+    <div id="message" class="center-hr"></div>
+  </div>
 
+  <script src="js/scripts.js"></script>
+  <script>
+    let useHtml = true;
+
+    window.addEventListener("load", function (ev) {
+      let loading = document.querySelector('#loading');
+      let message = loading.querySelector('#message');
+      setTheme();
+
+      message.textContent = "Loading data...";
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: { serviceWorkerVersion: serviceWorkerVersion },
+        onEntrypointLoaded: async function (engineInitializer) {
+          message.textContent = "Initializing...";
+          let config = { renderer: useHtml ? "html" : "canvaskit" };
+          let appRunner = await engineInitializer.initializeEngine(config);
+
+          message.textContent = "Running the app...";
+          document.querySelector("[name='viewport']").remove();
+          await appRunner.runApp();
+          loading.classList.add('done');
+          window.setTimeout(() => loading.remove(), 200);
+        },
+      });
+    });
+  </script>
 </body>
 
 </html>

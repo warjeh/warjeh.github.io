@@ -1,0 +1,85 @@
+/* @media (prefers-color-scheme: dark) {
+  body {
+    background-color: rgba(23, 29, 41, 255);
+  }
+} */
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-hr {
+  margin: 0 auto;
+}
+
+#circle {
+  background-color: rgb(255, 152, 0);
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+}
+
+#square-lg {
+  background-color: rgb(0, 121, 107);
+  width: 75px;
+  height: 75px;
+}
+
+#square-md {
+  background-color: rgb(255, 193, 7);
+  width: 50px;
+  height: 50px;
+  margin-bottom: 9px;
+}
+
+.spinner {
+  animation: mySpin 4s linear infinite;
+}
+
+#loading {
+  font-family: 'Times New Roman', Times, serif;
+  color: rgba(82, 94, 165, 255);
+  font-weight: 500;
+}
+
+#message {
+  margin-top: 12px;
+}
+
+#loading.done {
+  animation: 0.33s ease-in-out 0s 1 forwards myZoom;
+  opacity: 0.1;
+}
+
+@keyframes myZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(7);
+  }
+}
+
+@-webkit-keyframes mySpin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes mySpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
