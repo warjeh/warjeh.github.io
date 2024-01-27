@@ -13,7 +13,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "0c421110bf0ed49449a4cbf04b39d3a4
 "assets/fonts/fa/Samim.ttf": "dff4f93c6702d280ea2acf25fb4270ae",
 "assets/fonts/fa/Shabnam.ttf": "7b18a4a8f65b3f5eac92df3c91fe4400",
 "assets/fonts/fa/Vazir.ttf": "c456d8064fe9bac3444d70a744446f90",
-"assets/fonts/MaterialIcons-Regular.otf": "da625e1a7cd06f0c26535f665a74bc9f",
+"assets/fonts/MaterialIcons-Regular.otf": "375d6008052b98929306824f625a1a34",
 "assets/NOTICES": "bf043b661ae9b8ca0c69590325321da3",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "89ed8f4e49bcdfc0b5bfc9b24591e347",
 "assets/shaders/ink_sparkle.frag": "4096b5150bac93c41cbc9b45276bd90f",
@@ -30,10 +30,10 @@ const RESOURCES = {"assets/AssetManifest.bin": "0c421110bf0ed49449a4cbf04b39d3a4
 "icons/apple-touch-icon.png": "73623d687218f2198df4af0f8be05394",
 "icons/Icon-192.png": "edbe6112cadf3339a70be36ca4d4121c",
 "icons/Icon-512.png": "fe8919fea8587136129e0137cffec460",
-"index.html": "5b0766481b393ee24018d59cea40aa13",
-"/": "5b0766481b393ee24018d59cea40aa13",
+"index.html": "4df35e6b8a93444d0b6a0cfa7475f174",
+"/": "4df35e6b8a93444d0b6a0cfa7475f174",
 "js/scripts.js": "5db0f022015fce78d0a59dffbc109991",
-"main.dart.js": "9b537e6ec9f6a90ea2d1237f6a9dd0ea",
+"main.dart.js": "11bbf2998085297e1e648fa0d32ac2d7",
 "manifest.json": "e4830bcf97b95fe19950d4f9aa1a6204",
 "version.json": "672eafcbbf4582f3d1975b343fd2463d"};
 // The application shell files that are downloaded before a service worker can
