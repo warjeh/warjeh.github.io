@@ -29,41 +29,48 @@
 
   <link rel="stylesheet" href="css/styles.css">
   <script>
-    const serviceWorkerVersion = "1143335918";
+    const serviceWorkerVersion = "3084858747";
   </script>
   <script src="flutter.js" defer></script>
 </head>
 
 <body>
   <div id="loading" class="center">
-    <div id="square-md" class="center-hr spinner"></div>
-    <div id="square-lg" class="center-hr"></div>
-    <div id="circle" class="center-hr"></div>
-    <div id="message" class="center-hr"></div>
+    <div id="square-md" class="spinner"></div>
+    <div id="square-lg"></div>
+    <div id="circle"></div>
+    <div id="message"></div>
   </div>
-
   <script src="js/scripts.js"></script>
   <script>
     let useHtml = true;
-
-    window.addEventListener("load", function (ev) {
+    window.addEventListener("load", async function (ev) {
       let loading = document.querySelector('#loading');
       let message = loading.querySelector('#message');
+      message.textContent = "Warjeh: Checking cached version...";
+      await isNewVersion();
       setTheme();
-
-      message.textContent = "Loading data...";
+      message.textContent = "Warjeh: Loading data...";
       _flutter.loader.loadEntrypoint({
         serviceWorker: { serviceWorkerVersion: serviceWorkerVersion },
         onEntrypointLoaded: async function (engineInitializer) {
-          message.textContent = "Initializing...";
+          message.textContent = "Warjeh: Initializing...";
           let config = { renderer: useHtml ? "html" : "canvaskit" };
-          let appRunner = await engineInitializer.initializeEngine(config);
+          engineInitializer.initializeEngine(config).then(function (appRunner) {
+            message.textContent = "Running the app...";
+            document.querySelector("[name='viewport']").remove();
+            appRunner.runApp();
+            loading.classList.add('done');
+            window.setTimeout(() => loading.remove(), 200);
+          });
 
-          message.textContent = "Running the app...";
-          document.querySelector("[name='viewport']").remove();
-          await appRunner.runApp();
-          loading.classList.add('done');
-          window.setTimeout(() => loading.remove(), 200);
+          // let appRunner = await engineInitializer.initializeEngine(config);
+
+          // message.textContent = "Running the app...";
+          // document.querySelector("[name='viewport']").remove();
+          // await appRunner.runApp();
+          // loading.classList.add('done');
+          // window.setTimeout(() => loading.remove(), 200);
         },
       });
     });
