@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 
 <head>
-  <base href="/">
+  <base href=".">
 
   <meta charset="UTF-8">
-  <title>Warjeh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-key="title" class="t">Warjeh</title>
 
   <meta name="description" content="My personal website.">
   <meta name="keywords" content="وارژه, blog">
   <meta name="author" content="Parham Eb">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8aa5b8" />
   <link rel="manifest" href="manifest.json">
 
-  <!-- Browser meta tags & icons -->
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -26,55 +26,119 @@
   <meta property="og:description" content="Personal website.">
   <meta property="og:url" content="https://warjeh.com">
   <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@warjeh">
 
-  <link rel="stylesheet" href="css/styles.css">
-  <script>
-    const serviceWorkerVersion = "3084858747";
-  </script>
-  <script src="flutter.js" defer></script>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="canonical" href="https://warjeh.com/">
 </head>
 
 <body>
-  <div id="loading" class="center">
-    <div id="square-md" class="spinner"></div>
-    <div id="square-lg"></div>
-    <div id="circle"></div>
-    <div id="message"></div>
+
+  <div id="app">
+    <div id="appbar">
+      <button id="drawer" class="icon-btn">
+        <img src="icons/btn/menu.svg" alt="menu" />
+      </button>
+      <div class="spacer"></div>
+      <!-- <button id="setting" class="icon-btn settings">
+        <img src="icons/btn/settings.svg" alt="settings" />
+      </button> -->
+      <button id="font" class="icon-btn dd-btn settings">
+        <img src="icons/btn/font.svg" alt="fonts" />
+      </button>
+      <ul class="dd-menu rt">
+        <!-- // TODO -->
+        <li data-key="font1" class="t">Font 1</li>
+        <li data-key="font2" class="t">Font 2</li>
+        <li data-key="font3" class="t">Font 3</li>
+      </ul>
+
+      <button id="theme" class="icon-btn dd-btn settings">
+        <img src="icons/btn/theme.svg" alt="theme" />
+      </button>
+      <ul class="dd-menu rt">
+        <li data-key="systemTheme" class="t">System Theme</li>
+        <li data-key="lightTheme" class="t">Light Theme</li>
+        <li data-key="darkTheme" class="t">Dark Theme</li>
+      </ul>
+      <button id="language" class="icon-btn dd-btn settings">
+        <img src="icons/btn/lang.svg" alt="lang" />
+      </button>
+      <ul class="dd-menu rt">
+        <li data-key="en">
+          <span>English</span>
+          <div class="spacer"></div>
+          <span>en</span>
+        </li>
+        <li data-key="fa">
+          <span>فارسی</span>
+          <div class="spacer"></div>
+          <span>fa</span>
+        </li>
+      </ul>
+    </div>
+    <nav id="navbar">
+      <a href="#/home" data-key="home" class="t active">Home</a>
+      <a href="#/portfolio" data-key="portfolio" class="t">Portfolio</a>
+      <a href="#/about" data-key="about" class="t">About</a>
+      <a href="#/contact" data-key="contact" class="t">Contact</a>
+      <!-- <a href="#/blog" data-key="blog" class="t">Blog</a> -->
+
+    </nav>
+    <main id="pages">
+      <div id="home" class="page active"> </div>
+      <div id="portfolio" data-key="portfolioPage" class="t page">
+        In the near future, I will be showcasing a selection of my projects here as part of my portfolio.
+        <br />
+        In the meantime, you’re invited to explore a preview of this site, built using Flutter, available via
+        this <a href="https://flutter.warjeh.com">link</a>.
+      </div>
+      <div id="about" class="page"></div>
+      <div id="contact" class="page">
+        <div id="qrcode" class="center">
+          <div class="email active">
+            <img src="./images/mail.png" alt="Email QRCode">
+            <img src="./images/mail-dark.png" alt="Email QRCode" class="dark">
+          </div>
+          <div class="telegram">
+            <img src="./images/telegram.png" alt="Telegram QRCode" class="">
+            <img src="./images/telegram-dark.png" alt="Telegram QRCode" class=" dark">
+          </div>
+          <div class="whatsapp">
+            <img src="./images/whatsapp.png" alt="WhatsApp QRCode" class="">
+            <img src="./images/whatsapp-dark.png" alt="WhatsApp QRCode" class="dark">
+          </div>
+          <small data-key="scanOrClick" class="t scan">* Scan or click on the QR code.</small>
+        </div>
+        <div id="qrcode-bar">
+          <button id="email" class="txt-icon-btn active">
+            <img src="./icons/btn/mail.svg" alt="Email" class="">
+            <span data-key="email" class="t">Email</span>
+          </button>
+          <button id="telegram" class="txt-icon-btn">
+            <img src="./icons/btn/telegram.svg" alt="Telegram" class="">
+            <span data-key="telegram" class="t">Telegram</span>
+          </button>
+          <button id="whatsapp" class="txt-icon-btn">
+            <img src="./icons/btn/whatsapp.svg" alt="WhatsApp" class="">
+            <span data-key="whatsapp" class="t">WhatsApp</span>
+          </button>
+          <!-- <a href="" data-key="linkedin" class="translate linkedin">LinkedIn</a> -->
+
+        </div>
+      </div>
+      <!-- <div id="blog" class="page">Blog</div> -->
+      <div id="coming">
+        <div class="center">
+          <div id="square-md" class="center-hr spinner"></div>
+          <div id="square-lg" class="center-hr"></div>
+          <div id="circle" class="center-hr"></div>
+          <div id="coming-soon" data-key="comingSoon" class="t">Coming !Soon</div>
+        </div>
+      </div>
+    </main>
   </div>
-  <script src="js/scripts.js"></script>
-  <script>
-    let useHtml = true;
-    window.addEventListener("load", async function (ev) {
-      let loading = document.querySelector('#loading');
-      let message = loading.querySelector('#message');
-      message.textContent = "Warjeh: Checking cached version...";
-      await isNewVersion();
-      setTheme();
-      message.textContent = "Warjeh: Loading data...";
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: { serviceWorkerVersion: serviceWorkerVersion },
-        onEntrypointLoaded: async function (engineInitializer) {
-          message.textContent = "Warjeh: Initializing...";
-          let config = { renderer: useHtml ? "html" : "canvaskit" };
-          engineInitializer.initializeEngine(config).then(function (appRunner) {
-            message.textContent = "Running the app...";
-            document.querySelector("[name='viewport']").remove();
-            appRunner.runApp();
-            loading.classList.add('done');
-            window.setTimeout(() => loading.remove(), 200);
-          });
-
-          // let appRunner = await engineInitializer.initializeEngine(config);
-
-          // message.textContent = "Running the app...";
-          // document.querySelector("[name='viewport']").remove();
-          // await appRunner.runApp();
-          // loading.classList.add('done');
-          // window.setTimeout(() => loading.remove(), 200);
-        },
-      });
-    });
-  </script>
+  <script src="js/scripts.js" type="module"></script>
 </body>
 
 </html>

@@ -1,0 +1,333 @@
+#appbar,
+.icon-btn {
+  height: 40px;
+  display: flex;
+}
+#app,
+.icon-btn > img {
+  margin: auto;
+}
+.txt-icon-btn,
+a {
+  color: #2f60c9;
+}
+#navbar,
+#qrcode-bar {
+  text-align: center;
+}
+#qrcode-bar > img,
+.txt-icon-btn > img {
+  width: 30px;
+  height: 30px;
+}
+.dd-menu li,
+a {
+  text-decoration: none;
+}
+#qrcode:hover,
+.icon-btn,
+.txt-icon-btn,
+a {
+  cursor: pointer;
+}
+#coming,
+#drawer,
+#qrcode > div,
+.page:not(.active) {
+  display: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.spacer {
+  flex: 1;
+}
+body {
+  background-color: #fcefef11;
+}
+#app {
+  max-width: 1280px;
+}
+#qrcode > div.active,
+.dd-menu.show,
+.page.active,
+body.dark #qrcode > div.active > img.dark,
+body:not(.dark) #qrcode > div.active > img:not(.dark) {
+  display: block;
+}
+#appbar {
+  padding: 8px;
+}
+#navbar {
+  padding: 16px;
+  background-color: rgba(198, 203, 231, 0.527);
+  justify-content: center;
+}
+#navbar,
+#pages {
+  margin: 0 11px;
+}
+#appbar,
+#navbar,
+#pages {
+  border-radius: 5px;
+}
+#portfolio {
+  text-align: justify;
+  padding: 12px;
+}
+#navbar a {
+  font-weight: 500;
+  padding: 4px 12px;
+}
+a {
+  border-radius: 2px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+a:hover:not(.active) {
+  background-color: rgba(129, 158, 221, 0.2);
+}
+a.active {
+  color: #4e616d;
+  pointer-events: none;
+  cursor: default;
+}
+.icon-btn {
+  background: rgba(198, 203, 231, 0.137);
+  width: 40px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 1px 0 1px #adb8d45b;
+}
+.icon-btn:hover {
+  background: rgba(198, 203, 231, 0.4);
+  animation: 0.2s ease-out bubble;
+}
+.txt-icon-btn {
+  display: inline-flex;
+  background: 0 0;
+  border: none;
+  align-items: center;
+  gap: 8px;
+  padding-inline-end: 12px;
+  border-radius: 5px;
+}
+.txt-icon-btn:hover {
+  background: rgba(245, 239, 255, 0.11);
+}
+#email {
+  filter: invert(40%) sepia(80%) saturate(850%) hue-rotate(320deg)
+    brightness(100%) contrast(400%);
+}
+#telegram {
+  filter: invert(40%) sepia(80%) saturate(850%) hue-rotate(200deg)
+    brightness(100%) contrast(119%);
+}
+#whatsapp {
+  filter: invert(60%) sepia(80%) saturate(750%) hue-rotate(50deg)
+    brightness(100%) contrast(119%);
+}
+.txt-icon-btn.active {
+  background-color: rgba(99, 105, 141, 0.199);
+}
+#qrcode {
+  max-width: 300px;
+  max-height: 300px;
+}
+#qrcode:hover {
+  background-color: rgba(118, 154, 207, 0.171);
+}
+#qrcode > div.active > img {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+#qrcode-bar > img {
+  display: inline-block;
+}
+.dd-menu {
+  display: none;
+  position: absolute;
+  font-size: 14px;
+  top: 50px;
+  background-color: rgba(232, 242, 255, 0.986);
+  min-width: 150px;
+  overflow: auto;
+  box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  z-index: 1;
+}
+.dd-menu li {
+  padding: 12px 16px;
+  display: flex;
+}
+.dd-menu li:hover {
+  cursor: pointer;
+  background-color: rgba(235, 235, 235, 0.815);
+}
+.dd-menu li.selected {
+  background-color: rgba(224, 226, 255, 0.747);
+}
+.rt {
+  right: 10px;
+}
+.lt {
+  left: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  body.dark {
+    background-color: #171d29;
+    color: #ddd;
+  }
+  body.dark #navbar {
+    background-color: rgba(196, 207, 236, 0.199);
+  }
+  body.dark a {
+    font-weight: 500 !important;
+    color: #8aa0db !important;
+  }
+  body.dark a.active {
+    color: #e2ebf5 !important;
+  }
+  body.dark .dd-menu {
+    background-color: #2e3a52;
+  }
+  body.dark .dd-menu li:hover {
+    background-color: rgba(107, 131, 168, 0.185);
+  }
+  body.dark .dd-menu li.selected {
+    background-color: rgba(107, 131, 168, 0.548);
+  }
+  body.dark .icon-btn > img {
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(210deg)
+      brightness(118%) contrast(119%);
+  }
+}
+body.dark {
+  background-color: #171d29;
+  color: #ddd;
+}
+body.dark #navbar {
+  background-color: rgba(196, 207, 236, 0.199);
+}
+body.dark a {
+  font-weight: 500 !important;
+  color: #8aa0db !important;
+}
+body.dark a.active {
+  color: #e2ebf5 !important;
+}
+body.dark .dd-menu {
+  background-color: #2e3a52;
+}
+body.dark .dd-menu li:hover {
+  background-color: rgba(107, 131, 168, 0.185);
+}
+body.dark .dd-menu li.selected {
+  background-color: rgba(107, 131, 168, 0.548);
+}
+body.dark .icon-btn > img {
+  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(210deg)
+    brightness(118%) contrast(119%);
+}
+.center {
+  margin: 70px auto;
+}
+.center-hr {
+  margin: 0 auto;
+}
+#coming-soon {
+  font-size: calc(10px + 2vmin);
+  float: right;
+  color: #4d75aa;
+  font-size: x-large;
+  font-weight: bolder;
+}
+#circle {
+  background-color: #ff9800;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 5px;
+}
+#square-lg {
+  background-color: #00796b;
+  width: 75px;
+  height: 75px;
+}
+#square-md {
+  background-color: #ffc107;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 12px;
+}
+@keyframes bubble {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .spinner {
+    animation: 3s linear infinite mySpin;
+  }
+}
+@keyframes mySpin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes mySpin {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@font-face {
+  font-family: Lato;
+  src: url('../fonts/en/Lato.ttf');
+}
+@font-face {
+  font-family: PlayfairDisplay;
+  src: url('../fonts/en/PlayfairDisplay.ttf');
+}
+@font-face {
+  font-family: Poppins;
+  src: url('../fonts/en/Poppins.ttf');
+}
+@font-face {
+  font-family: Roboto;
+  src: url('../fonts/en/Roboto.ttf');
+}
+@font-face {
+  font-family: Sahel;
+  src: url('../fonts/fa/Sahel.ttf');
+}
+@font-face {
+  font-family: Samim;
+  src: url('../fonts/fa/Samim.ttf');
+}
+@font-face {
+  font-family: Shabnam;
+  src: url('../fonts/fa/Shabnam.ttf');
+}
+@font-face {
+  font-family: Vazir;
+  src: url('../fonts/fa/Vazir.ttf');
+}
+@font-face {
+  font-family: Yekan;
+  src: url('../fonts/fa/Yekan.ttf');
+}
